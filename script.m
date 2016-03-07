@@ -4,7 +4,11 @@ clear all;
 close all;
 
 
-load Num;
+% load Num;
+load a;
+load b;
+load a1;
+load b1;
 
 %% trabalhando e importando audio
 
@@ -39,10 +43,10 @@ audior=Yr(1:10*FSr);
 
 exibespec(audio,FS,'AudioNormal');
 exibespec(audior,FSr,'Audio com Ruido');
-semruido=filter(Num,ones(1,size(Num,2)),audior)
+semruido=filter(b,a,audior);
+semruido1=filter(b1,a1,semruido);
 
-
-exibespec(semruido,FSr,'Audio Filtrado');
+exibespec(semruido1,FSr,'Audio Filtrado');
 player(semruido)
 % window=ceil(100*FS/1000)
 % 
