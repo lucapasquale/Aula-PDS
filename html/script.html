@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>script</title><meta name="generator" content="MATLAB 8.0"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-02-26"><meta name="DC.source" content="script.m"><style type="text/css">
+      --><title>script</title><meta name="generator" content="MATLAB 8.6"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-03-08"><meta name="DC.source" content="script.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -23,7 +23,7 @@ a:visited { color:#004aa0; text-decoration:none; }
 
 p { padding:0px; margin:0px 0px 20px; }
 img { padding:0px; margin:0px 0px 20px; border:none; }
-p img, pre img, tt img, li img { margin-bottom:0px; } 
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
 
 ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
 ul li { padding:0px; margin:0px 0px 7px 0px; }
@@ -38,11 +38,12 @@ ol li ul li { list-style:square; }
 
 .content { font-size:1.2em; line-height:140%; padding: 20px; }
 
-pre, tt, code { font-size:12px; }
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
 pre { margin:0px 0px 20px; }
-pre.error { color:red; }
 pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
 pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
 
 @media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
 
@@ -65,76 +66,67 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">limpa programa</a></li><li><a href="#2">trabalhando e importando audio</a></li></ul></div><h2>limpa programa<a name="1"></a></h2><p><img src="script_eq05913.png" alt="$$e^{\pi i} + 1 = 0$$"></p><pre class="codeinput">clear <span class="string">all</span>;
-</pre><h2>trabalhando e importando audio<a name="2"></a></h2><pre class="codeinput">[Y, FS] = audioread(<span class="string">'som.wav'</span>);
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">limpa programa</a></li><li><a href="#2">Importando &Atilde;&iexcl;udio e cortando somente at&Atilde;&copy; 10 segundos</a></li><li><a href="#3">Criando spectogramas e aplicando filtros rejeita-faixa em 1k e 5k</a></li></ul></div><h2>limpa programa<a name="1"></a></h2><pre class="codeinput">clear <span class="string">all</span>;
+close <span class="string">all</span>;
+
+<span class="comment">% load Num - Valores Filtros;</span>
+load <span class="string">a</span>;
+load <span class="string">b</span>;
+load <span class="string">a1</span>;
+load <span class="string">b1</span>;
+</pre><h2>Importando &Atilde;&iexcl;udio e cortando somente at&Atilde;&copy; 10 segundos<a name="2"></a></h2><pre class="codeinput">[Y, FS] = audioread(<span class="string">'som.wav'</span>);
+[Yr,FSr] = audioread(<span class="string">'som-ruido.wav'</span>);
 
 audio = Y(1:10*FS);
-audioR = audio(:,2);
-audioL = audio(:,1);
-</pre><p>plot(audioL); figure plot(audioR); figure FR=fft(audioR); FL=fft(audioL); figure</p><pre class="codeinput">plot(audio);
-<span class="comment">% figure</span>
-<span class="comment">% plot(FR);</span>
-figure
-plot(fft(audio));
-Nx = length(audio);
-nsc = floor(Nx/4.5);
-nov = floor(nsc/2);
-nff = max(256,2^nextpow2(nsc));
+audior=Yr(1:10*FSr);
+</pre><h2>Criando spectogramas e aplicando filtros rejeita-faixa em 1k e 5k<a name="3"></a></h2><pre class="codeinput">exibespec(audio,FS,<span class="string">'AudioNormal'</span>);
+exibespec(audior,FSr,<span class="string">'Audio com Ruido'</span>);
 
-t = spectrogram(x,hamming(nsc),nov,nff);
+semruido=filter(b,a,audior);
+semruido1=filter(b1,a1,semruido);
+exibespec(semruido1,FSr,<span class="string">'Audio Filtrado'</span>);
 
-<span class="comment">% x=audioplayer(Y,45000)</span>
-<span class="comment">% play( x)</span>
-<span class="comment">% plot(Y);</span>
-<span class="comment">% Fy=fourier(Y);</span>
-<span class="comment">% plot(Fy);</span>
-</pre><pre class="codeoutput">Undefined function or variable 'x'.
+sound(semruido1,FSr);
+</pre><pre class="codeoutput error">Attempt to execute SCRIPT exibespec as a function:
+C:\Users\Pedro\Documents\GitHub\Aula-PDS\exibespec.m
 
-Error in script (line 35)
-t = spectrogram(x,hamming(nsc),nov,nff);
-</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2012b</a><br></p></div><!--
+Error in script (line 24)
+exibespec(audio,FS,'AudioNormal');
+</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2015b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% limpa programa
-% 
-% 
-% $$e^{\pi i} + 1 = 0$$
-% 
 
 clear all;
+close all;
 
-%% trabalhando e importando audio
+% load Num - Valores Filtros;
+load a;
+load b;
+load a1;
+load b1;
+
+
+%% Importando Ã¡udio e cortando somente atÃ© 10 segundos
 
 [Y, FS] = audioread('som.wav');
+[Yr,FSr] = audioread('som-ruido.wav');
 
 audio = Y(1:10*FS);
-audioR = audio(:,2);
-audioL = audio(:,1);
+audior=Yr(1:10*FSr);
 
-%%
-% plot(audioL);
-% figure
-% plot(audioR);
-% figure
-% FR=fft(audioR);
-% FL=fft(audioL);
-% figure
-plot(audio);
-% figure
-% plot(FR);
-figure
-plot(fft(audio));
-Nx = length(audio);
-nsc = floor(Nx/4.5);
-nov = floor(nsc/2);
-nff = max(256,2^nextpow2(nsc));
 
-t = spectrogram(x,hamming(nsc),nov,nff);
+%% Criando spectogramas e aplicando filtros rejeita-faixa em 1k e 5k
 
-% x=audioplayer(Y,45000)
-% play( x)
-% plot(Y);
-% Fy=fourier(Y);
-% plot(Fy);
+exibespec(audio,FS,'AudioNormal');
+exibespec(audior,FSr,'Audio com Ruido');
+
+semruido=filter(b,a,audior);
+semruido1=filter(b1,a1,semruido);
+exibespec(semruido1,FSr,'Audio Filtrado');
+
+sound(semruido1,FSr);
+
+
 
 ##### SOURCE END #####
 --></body></html>

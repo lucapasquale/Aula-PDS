@@ -28,6 +28,6 @@ semruido=filter(b,a,audior);
 semruido1=filter(b1,a1,semruido);
 exibespec(semruido1,FSr,'Audio Filtrado');
 
-sound(semruido1,FSr);
+sound(1.5*semruido1,FSr);
 
 
