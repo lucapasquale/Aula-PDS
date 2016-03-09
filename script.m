@@ -25,9 +25,11 @@ exibespec(audio,FS,'AudioNormal');
 exibespec(audior,FSr,'Audio com Ruido');
 
 semruido=filter(b,a,audior);
-semruido1=filter(b1,a1,semruido);
-exibespec(semruido1,FSr,'Audio Filtrado');
 
-sound(1.5*semruido1,FSr);
+semruido1=filter(b,a,semruido);
+semruido2=filter(b1,a1,semruido1);
+exibespec(semruido2,FSr,'Audio Filtrado');
+
+sound(1.5*semruido2,FSr);
 
 
