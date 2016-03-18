@@ -8,9 +8,10 @@ load a;
 load b;
 load a1;
 load b1;
+load x;
 
 
-%% Importando áudio e cortando somente até 10 segundos
+%% Importando Audio e cortando somente ate 10 segundos
 
 [Y, FS] = audioread('som.wav');
 [Yr,FSr] = audioread('som-ruido.wav');
@@ -28,8 +29,9 @@ semruido=filter(b,a,audior);
 
 semruido1=filter(b,a,semruido);
 semruido2=filter(b1,a1,semruido1);
-exibespec(semruido2,FSr,'Audio Filtrado');
 
-sound(1.5*semruido2,FSr);
+exibespec(semruido2,FSr,'Audio Filtrado');  
 
+%sound(0.1*double((100*semruido2)),FSr);
+sound(x,FSr)
 
