@@ -4,13 +4,13 @@
 #  Copyright 1994-2010 The MathWorks, Inc.
 Model {
   Name			  "ecg_modelo"
-  Version		  8.1
+  Version		  8.0
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.31"
+    ComputedModelVersion    "1.33"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -23,7 +23,7 @@ Model {
   "s -> Code Generation -> Build Model.\n  3. Connect to the real-time code using Simulation -> Connect to target.\n  4"
   ". Start the real-time execution using Simulation -> Start real-time code. \n\nNote: \nTo run this demo, you must hav"
   "e a data acquisition board plugged into your computer."
-  SavedCharacterEncoding  "UTF-8"
+  SavedCharacterEncoding  "windows-1252"
   SaveDefaultBlockParams  on
   ScopeRefreshTime	  0.035000
   OverrideScopeRefreshTime on
@@ -43,7 +43,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [1.0, 25.0, 984.0, 743.0]
+      Location		      [-9.0, -9.0, 1938.0, 1050.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -67,9 +67,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[948.0, 595.0]
+	Extents			[1884.0, 878.0]
 	ZoomFactor		[1.25]
-	Offset			[8.0, 7.8000000000000114]
+	Offset			[-361.1, -259.6]
       }
     }
   }
@@ -77,11 +77,11 @@ Model {
   Creator		  "The MathWorks Inc."
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "rafa"
+  LastModifiedBy	  "H243"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Mar 24 21:04:43 2015"
-  RTWModifiedTimeStamp	  349131880
-  ModelVersionFormat	  "1.%<AutoIncrement:31>"
+  LastModifiedDate	  "Fri Apr 08 11:35:12 2016"
+  RTWModifiedTimeStamp	  382011167
+  ModelVersionFormat	  "1.%<AutoIncrement:33>"
   ConfigurationManager	  "None"
   SampleTimeColors	  on
   SampleTimeAnnotations	  on
@@ -175,13 +175,13 @@ Model {
     Dimension		    2
     Simulink.ConfigSet {
       $ObjectID		      7
-      Version		      "1.13.0"
+      Version		      "1.12.1"
       Array {
 	Type			"Handle"
 	Dimension		8
 	Simulink.SolverCC {
 	  $ObjectID		  8
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  StartTime		  "0.0"
 	  StopTime		  "10.0"
 	  AbsTol		  "auto"
@@ -216,7 +216,7 @@ Model {
 	}
 	Simulink.DataIOCC {
 	  $ObjectID		  9
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
 	  FinalStateName	  "xFinal"
@@ -248,7 +248,7 @@ Model {
 	}
 	Simulink.OptimizationCC {
 	  $ObjectID		  10
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  BlockReduction	  on
 	  BooleanDataType	  on
 	  ConditionallyExecuteInputs on
@@ -291,7 +291,7 @@ Model {
 	}
 	Simulink.DebuggingCC {
 	  $ObjectID		  11
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
 	  ArrayBoundsChecking	  "none"
@@ -381,12 +381,11 @@ Model {
 	}
 	Simulink.HardwareCC {
 	  $ObjectID		  12
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
 	  ProdBitPerInt		  32
 	  ProdBitPerLong	  32
-	  ProdBitPerLongLong	  64
 	  ProdBitPerFloat	  32
 	  ProdBitPerDouble	  64
 	  ProdBitPerPointer	  32
@@ -396,20 +395,17 @@ Model {
 	  ProdEndianess		  "Unspecified"
 	  ProdWordSize		  32
 	  ProdShiftRightIntArith  on
-	  ProdLongLongMode	  off
 	  ProdHWDeviceType	  "32-bit Generic"
 	  TargetBitPerChar	  8
 	  TargetBitPerShort	  16
 	  TargetBitPerInt	  32
 	  TargetBitPerLong	  32
-	  TargetBitPerLongLong	  64
 	  TargetBitPerFloat	  32
 	  TargetBitPerDouble	  64
 	  TargetBitPerPointer	  32
 	  TargetLargestAtomicInteger "Char"
 	  TargetLargestAtomicFloat "None"
 	  TargetShiftRightIntArith on
-	  TargetLongLongMode	  off
 	  TargetIntDivRoundTo	  "Undefined"
 	  TargetEndianess	  "Unspecified"
 	  TargetWordSize	  32
@@ -422,7 +418,7 @@ Model {
 	}
 	Simulink.ModelReferenceCC {
 	  $ObjectID		  13
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
 	  EnableParallelModelReferenceBuilds off
@@ -437,7 +433,7 @@ Model {
 	}
 	Simulink.SFSimCC {
 	  $ObjectID		  14
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
 	  SFSimEcho		  on
@@ -452,7 +448,7 @@ Model {
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
 	  $ObjectID		  15
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  SystemTargetFile	  "grt.tlc"
 	  GenCodeOnly		  off
 	  MakeCommand		  "make_rtw"
@@ -481,7 +477,6 @@ Model {
 	  CodeExecutionProfileVariable "executionProfile"
 	  CodeProfilingSaveOptions "SummaryOnly"
 	  CodeProfilingInstrumentation off
-	  SILDebugging		  off
 	  TargetLang		  "C"
 	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
 	  IncludeERTFirstTime	  off
@@ -502,7 +497,7 @@ Model {
 	    Dimension		    2
 	    Simulink.CodeAppCC {
 	      $ObjectID		      16
-	      Version		      "1.13.0"
+	      Version		      "1.12.1"
 	      ForceParamTrailComments off
 	      GenerateComments	      on
 	      IgnoreCustomStorageClasses on
@@ -543,7 +538,7 @@ Model {
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
 	      $ObjectID		      17
-	      Version		      "1.13.0"
+	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
 		Dimension		1
@@ -586,12 +581,10 @@ Model {
 	      SupportVariableSizeSignals off
 	      EnableShiftOperators    on
 	      ParenthesesLevel	      "Nominal"
-	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
 	      ModelStepFunctionPrototypeControlCompliant off
 	      CPPClassGenCompliant    off
 	      AutosarCompliant	      off
 	      GRTInterface	      on
-	      GenerateAllocFcn	      off
 	      UseMalloc		      off
 	      ExtMode		      off
 	      ExtModeStaticAlloc      off
@@ -617,13 +610,13 @@ Model {
     }
     Simulink.ConfigSet {
       $ObjectID		      18
-      Version		      "1.13.0"
+      Version		      "1.12.1"
       Array {
 	Type			"Handle"
 	Dimension		8
 	Simulink.SolverCC {
 	  $ObjectID		  19
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  StartTime		  "0.0"
 	  StopTime		  "10"
 	  AbsTol		  "auto"
@@ -658,7 +651,7 @@ Model {
 	}
 	Simulink.DataIOCC {
 	  $ObjectID		  20
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
 	  FinalStateName	  "xFinal"
@@ -690,7 +683,7 @@ Model {
 	}
 	Simulink.OptimizationCC {
 	  $ObjectID		  21
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -746,7 +739,7 @@ Model {
 	}
 	Simulink.DebuggingCC {
 	  $ObjectID		  22
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
 	  ArrayBoundsChecking	  "none"
@@ -836,12 +829,11 @@ Model {
 	}
 	Simulink.HardwareCC {
 	  $ObjectID		  23
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
 	  ProdBitPerInt		  32
 	  ProdBitPerLong	  32
-	  ProdBitPerLongLong	  64
 	  ProdBitPerFloat	  32
 	  ProdBitPerDouble	  64
 	  ProdBitPerPointer	  32
@@ -851,20 +843,17 @@ Model {
 	  ProdEndianess		  "LittleEndian"
 	  ProdWordSize		  32
 	  ProdShiftRightIntArith  on
-	  ProdLongLongMode	  off
 	  ProdHWDeviceType	  "32-bit Real-Time Windows Target"
 	  TargetBitPerChar	  8
 	  TargetBitPerShort	  16
 	  TargetBitPerInt	  32
 	  TargetBitPerLong	  32
-	  TargetBitPerLongLong	  64
 	  TargetBitPerFloat	  32
 	  TargetBitPerDouble	  64
 	  TargetBitPerPointer	  32
 	  TargetLargestAtomicInteger "Char"
 	  TargetLargestAtomicFloat "None"
 	  TargetShiftRightIntArith on
-	  TargetLongLongMode	  off
 	  TargetIntDivRoundTo	  "Undefined"
 	  TargetEndianess	  "Unspecified"
 	  TargetWordSize	  32
@@ -877,7 +866,7 @@ Model {
 	}
 	Simulink.ModelReferenceCC {
 	  $ObjectID		  24
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
 	  EnableParallelModelReferenceBuilds off
@@ -892,7 +881,7 @@ Model {
 	}
 	Simulink.SFSimCC {
 	  $ObjectID		  25
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
 	  SFSimEcho		  on
@@ -907,7 +896,7 @@ Model {
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
 	  $ObjectID		  26
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -951,7 +940,6 @@ Model {
 	  CodeExecutionProfileVariable "executionProfile"
 	  CodeProfilingSaveOptions "SummaryOnly"
 	  CodeProfilingInstrumentation off
-	  SILDebugging		  off
 	  TargetLang		  "C"
 	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
 	  IncludeERTFirstTime	  off
@@ -972,7 +960,7 @@ Model {
 	    Dimension		    2
 	    Simulink.CodeAppCC {
 	      $ObjectID		      27
-	      Version		      "1.13.0"
+	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
 		Dimension		21
@@ -1039,7 +1027,7 @@ Model {
 	    Simulink.TargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
 	      $ObjectID		      28
-	      Version		      "1.13.0"
+	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
 		Dimension		16
@@ -1097,12 +1085,10 @@ Model {
 	      SupportVariableSizeSignals off
 	      EnableShiftOperators    on
 	      ParenthesesLevel	      "Nominal"
-	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.TargetSpecificTriggerConfigurationBase"
 	      ModelStepFunctionPrototypeControlCompliant off
 	      CPPClassGenCompliant    off
 	      AutosarCompliant	      off
 	      GRTInterface	      on
-	      GenerateAllocFcn	      off
 	      CustomProperty {
 		DataType		"string"
 		Name			"FunctionExecutionProfile"
@@ -1360,7 +1346,6 @@ Model {
       SystemSampleTime	      "-1"
       RTWFcnNameOpts	      "Auto"
       RTWFileNameOpts	      "Auto"
-      FunctionInterfaceSpec   "void_void"
       RTWMemSecFuncInitTerm   "Inherit from model"
       RTWMemSecFuncExecute    "Inherit from model"
       RTWMemSecDataConstants  "Inherit from model"
@@ -1403,7 +1388,7 @@ Model {
   }
   System {
     Name		    "ecg_modelo"
-    Location		    [1, 25, 985, 768]
+    Location		    [-9, -9, 1929, 1041]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1417,7 +1402,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "79"
+    SIDHighWatermark	    "535"
     Block {
       BlockType		      Clock
       Name		      "Clock"
@@ -1444,6 +1429,82 @@ Model {
       Interpolate	      off
       ZeroCross		      on
       OutputAfterFinalValue   "Cyclic repetition"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Filter"
+      SID		      "535"
+      Tag		      "BlockMethodSubSystem"
+      Ports		      [1, 1]
+      Position		      [355, 70, 430, 110]
+      ZOrder		      36
+      LibraryVersion	      "1.321"
+      UserDataPersistent      on
+      UserData		      "DataTag0"
+      SourceBlock	      "dsparch4/Digital Filter"
+      SourceType	      "Digital Filter"
+      TypePopup		      "FIR (all zeros)"
+      IIRFiltStruct	      "Direct form II transposed"
+      AllPoleFiltStruct	      "Direct form"
+      FIRFiltStruct	      "Direct form"
+      CoeffSource	      "Specify via dialog"
+      NumCoeffs		      "[0.0085375963146684577 0.026654770085303588 0.064612556253147255 0.12161248318662535 0.1777339"
+      "0832331204 0.20169737167388641 0.17773390832331204 0.12161248318662535 0.064612556253147255 0.026654770085303588"
+      " 0.0085375963146684577]"
+      DenCoeffs		      "[1 0.1]"
+      BiQuadCoeffs	      "[1 0.3 0.4 1 0.1 0.2]"
+      LatticeCoeffs	      "[0.2 0.4]"
+      denIgnore		      on
+      FiltPerSampPopup	      "One filter per frame"
+      IC		      "0"
+      ICnum		      "0"
+      ICden		      "0"
+      additionalParams	      off
+      allowOverrides	      on
+      showCoeff		      off
+      firstCoeffMode	      "Same word length as input"
+      firstCoeffWordLength    "16"
+      firstCoeffFracLength    "15"
+      secondCoeffMode	      "Same as numerator"
+      secondCoeffWordLength   "16"
+      secondCoeffFracLength   "15"
+      thirdCoeffMode	      "Same as input"
+      thirdCoeffWordLength    "16"
+      thirdCoeffFracLength    "15"
+      showOut		      off
+      outputMode	      "Same as accumulator"
+      outputWordLength	      "16"
+      outputFracLength	      "15"
+      showAcc		      off
+      accumMode		      "Same as product output"
+      accumWordLength	      "32"
+      accumFracLength	      "30"
+      showMpy		      off
+      prodOutputMode	      "Same as input"
+      prodOutputWordLength    "32"
+      prodOutputFracLength    "30"
+      showMem		      off
+      memoryMode	      "Same as accumulator"
+      memoryWordLength	      "16"
+      memoryFracLength	      "15"
+      roundingMode	      "Floor"
+      overflowMode	      off
+      ScaleValues	      "1"
+      scaleValueFracLength    "14"
+      tapSumMode	      "Same as input"
+      tapSumWordLength	      "32"
+      tapSumFracLength	      "30"
+      stageIOMode	      "Same as input"
+      stageIOWordLength	      "16"
+      stageInFracLength	      "15"
+      stageOutFracLength      "15"
+      LockScale		      off
+      FilterSource	      "Specify via dialog"
+      dfiltObjectName	      "dfilt.dffir([1 2 1])"
+      multiplicandMode	      "Same as output"
+      multiplicandWordLength  "32"
+      multiplicandFracLength  "30"
+      InputProcessing	      "Columns as channels (frame based)"
     }
     Block {
       BlockType		      Mux
@@ -1511,7 +1572,7 @@ Model {
 	  Ports			  [0, 1]
 	  Position		  [20, 88, 100, 132]
 	  ZOrder		  10
-	  LibraryVersion	  "1.75"
+	  LibraryVersion	  "1.74"
 	  SourceBlock		  "commnoisgen2/Gaussian Noise\nGenerator"
 	  SourceType		  "Gaussian Noise Generator"
 	  m			  "0"
@@ -1588,10 +1649,10 @@ Model {
       Name		      "Scope"
       SID		      "17"
       Ports		      [1]
-      Position		      [495, 19, 525, 51]
+      Position		      [605, 74, 635, 106]
       ZOrder		      1
       Floating		      off
-      Location		      [461, 201, 1122, 878]
+      Location		      [240, 329, 1606, 1007]
       Open		      off
       NumInputPorts	      "1"
       List {
@@ -1723,7 +1784,7 @@ Model {
       Name		      "To Workspace1"
       SID		      "74"
       Ports		      [1]
-      Position		      [510, 125, 570, 155]
+      Position		      [605, 135, 665, 165]
       ZOrder		      24
       VariableName	      "ecg_fir"
       MaxDataPoints	      "inf"
@@ -1796,17 +1857,38 @@ Model {
     Line {
       SrcBlock		      "Rate Transition"
       SrcPort		      1
-      Points		      [120, 0]
+      DstBlock		      "Filter"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Filter"
+      SrcPort		      1
+      Points		      [10, 0]
       Branch {
-	Points			[0, 50]
+	Points			[0, 60]
 	DstBlock		"To Workspace1"
 	DstPort			1
       }
       Branch {
-	Points			[33, 0; 0, -55]
 	DstBlock		"Scope"
 	DstPort			1
       }
     }
+  }
+}
+MatData {
+  NumRecords		  1
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    Z (   8    (     @         %    \"     $    !     0         %  0 %@    $   !8    :&%S26"
+    "YH97)I=&5D3W!T:6]N     &9I;'1E<D-O;G-T<G5C=&]R      !F:6QT97)#;VYS=')U8W1O<D%R9W, 24-$871A                      X "
+    "   P    !@    @    ) @        4    (     0    $    !          (  0 !    #@   $     &    \"     0         !0    @  "
+    "  !    \"P    $         $     L   !D9FEL=\"YD9F9I<@      #@   +@    &    \"     $         !0    @    !     0    $ "
+    "        #@   (@    &    \"     8         !0    @    !    \"P    $         \"0   %@   !+XJG'*'R!/]_R,5=C2YL_DZH$T'*"
+    "*L#]J:!+F_B&_/Q#'T17\\O\\8_VJ6#+SC1R3\\0Q]$5_+_&/VIH$N;^(;\\_DZH$T'**L#_?\\C%78TN;/TOBJ<<H?($_#@   ! !   &    \"  "
+    "   (         !0    @    !     0    $         !0 $  8    !    $@   $E#;G5M $E#9&5N $E#              X    X    !@   "
+    " @    &          4    (     0    $    !          D    (               .    .     8    (    !@         %    \"     "
+    "$    !     0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0   "
+    " @               "
   }
 }

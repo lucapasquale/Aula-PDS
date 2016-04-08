@@ -1,3 +1,4 @@
+
 %% Rafael Corsi 
 % Núcleo de Sistemas Eletrônicos Embarcados - NSE^2
 % Script de geração de ECG para tratamento de sinais em HIL
@@ -12,12 +13,14 @@ Fs = 1/Ts;
 %% Carrega dados previamente gerados com script em ECG_api
 load ecg_dados;
 load SOS;
+load SOS1
 load G;
 
 % Cria vetor de dados utilizado pelo simulink
 dado.time = [];
 
 % Interpola o dado linearmente para alteara a taxa de amostragem
+
 x_interpolacao = Fs/(size(ecg_p.x,2)/max(ecg_p.x));
 dado.signals.values = interp(ecg_p.y', x_interpolacao) ; 
 
@@ -48,15 +51,18 @@ exibespec(ecg_noise,Fs,'ECG')
 %% Plota gráfico do ECG filtrado
 % implementar
 close all;
-%filtrado=filter(G,SOS(:,1),ecg_noise);
-filtrado=sosfilt(SOS,ecg_noise)
-%filtrado1=filter(G,SOS(:,1),filtrado);
-db=log(filtrado);
 
-exibespec(db,Fs,'Filtro',2000)
+
+
+
+filt1=sosfilt(SOS1,ecg_noise);
+%exibespec(db,Fs,'Filtro',2000)
 figure
-plot(filtrado1);
-
+filt2=filt1(:,1);
+plot(filt2);
+figure
+db=log(filt2);
+plot(abs(fft(db)));
 %% FFT do ECG com ruído filtrado
 % implementar 
 
@@ -74,23 +80,23 @@ devices(1)
 s = daq.createSession('ni')
 
 % configuramos a saída análogica 0
-addAnalogOutputChannel(s,'Dev3',0,'Voltage')
+addAnalogOutputChannel(s,'Dev4',0,'Voltage')
 
 % Configura a taxa de amostragem
 s.Rate = Fs;
 
 %% Validando saida - parte 1
 % coloca 1 V no D/A para verifcar se está ok
-outputSingleScan(s, 2)
+outputSingleScan(s, 0)
 
 %% Validando saida com sin - parte 2
-outputSignal = sin(linspace(0,pi*2,s.Rate)');
-plot(outputSignal);
+outputSignal = 1+ sin(linspace(0,pi*100,s.Rate)');
+%plot(ecg_noise);
 xlabel('Time');
 ylabel('Voltage');
 
 % aqui usamos outra função, colocamos um vetor no buffer
-queueOutputData(s,outputSignal);
+queueOutputData(s,ecg_noise(:,1));
 
 % inicializa o processo
 s.startForeground;
