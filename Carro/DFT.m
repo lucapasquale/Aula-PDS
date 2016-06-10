@@ -11,6 +11,6 @@ xlabel('Frequency (Hz)')
 ylabel('|Y(f)|')
 x = f;
 y = abs(F(1:NFFT/2+1));
-stem(x,y,c);
+plot(x,y,c);
 %Muda os valores maximos dos eixos
-axis([0 200 0 inf])
+axis([0 150 0 0.005])
